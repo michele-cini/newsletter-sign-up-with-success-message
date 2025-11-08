@@ -18,30 +18,43 @@
   --blue-700: hsl(235, 18%, 26%);
   --Grey: hsl(0, 0%, 58%);
   --white: hsl(0, 0%, 100%);
+
+  --desktop-picture-width: calc(10rem + 25vw);
+  --desktop-picture-height: calc(var(--desktop-picture-width) / 0.6745);
 }
 
 body {
   font-family: "Roboto", sans-serif;
   color: var(--blue-700);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: var(--blue-700);
 }
 
-main {
-  container-type: inline-size;
-}
 article {
-  font-size: 4.25cqi;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
 }
 
 picture {
-    width: 100%;
+  width: 100vw;
 }
 
 picture img {
-    width: 100%;
+  width: 100%;
+}
+
+section {
+  container-type: inline-size;
+  width: calc(20rem + 25vw);
+  max-width: 100vw;
 }
 
 .text-wrap {
   padding: 2em 1.5em;
+  font-size: 4.25cqi;
 }
 
 h1 {
@@ -61,7 +74,7 @@ li {
 }
 
 li:not(:last-child) {
-    margin-bottom: 0.7em;
+  margin-bottom: 0.7em;
 }
 
 li::before {
@@ -96,4 +109,39 @@ form button {
   background-color: var(--blue-800);
   color: var(--white);
   border: none;
+}
+
+@media screen and (min-width: 64em) {
+  article {
+    flex-direction: row-reverse;
+    align-items: center;
+    justify-content: center;
+    width: fit-content;
+    background-color: var(--white);
+    height: var(--desktop-picture-height);
+  }
+  picture {
+    width: var(--desktop-picture-width);
+    height: 100%;
+  }
+
+  picture img {
+    object-fit: contain;
+  }
+
+  section {
+    width: calc(1.1 * var(--desktop-picture-width));
+    height: 100%;
+    display: flex;
+    align-items: center;
+  }
+
+  .text-wrap {
+    padding: 5em 3em;
+    font-size: 3.4cqi;
+  }
+
+  h1 {
+    font-size: 3.3em;
+  }
 }
