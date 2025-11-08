@@ -1,0 +1,99 @@
+@font-face {
+  font-family: "Roboto";
+  src: url(assets/fonts/Roboto-Regular.ttf) format("ttf");
+  font-weight: 400;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: "Roboto";
+  src: url(assets/fonts/Roboto-Bold.ttf) format("ttf");
+  font-weight: 700;
+  font-style: normal;
+}
+
+:root {
+  --red: hsl(4, 100%, 67%);
+  --blue-800: hsl(234, 29%, 20%);
+  --blue-700: hsl(235, 18%, 26%);
+  --Grey: hsl(0, 0%, 58%);
+  --white: hsl(0, 0%, 100%);
+}
+
+body {
+  font-family: "Roboto", sans-serif;
+  color: var(--blue-700);
+}
+
+main {
+  container-type: inline-size;
+}
+article {
+  font-size: 4.25cqi;
+}
+
+picture {
+    width: 100%;
+}
+
+picture img {
+    width: 100%;
+}
+
+.text-wrap {
+  padding: 2em 1.5em;
+}
+
+h1 {
+  font-size: 2.3em;
+  margin-bottom: 0.4em;
+  color: var(--blue-800);
+}
+
+ul {
+  padding-left: 2em;
+  list-style-type: none;
+  margin-bottom: 2em;
+}
+
+li {
+  position: relative;
+}
+
+li:not(:last-child) {
+    margin-bottom: 0.7em;
+}
+
+li::before {
+  content: "";
+  width: 1.1em;
+  height: 1.1em;
+  position: absolute;
+  top: 10%;
+  left: -10%;
+  background: url(assets/images/icon-list.svg) no-repeat center/contain;
+}
+
+.thickle {
+  font-size: 0.7em;
+  font-weight: 700;
+  color: var(--blue-700);
+}
+
+form input,
+form button {
+  display: block;
+  width: 100%;
+  border-radius: 0.5em;
+  padding: 1em 1.35em;
+  margin-bottom: 1.5em;
+  margin-top: 0.3em;
+  border: 0.07em solid var(--Grey);
+}
+
+form button {
+  margin-bottom: 0;
+  background-color: var(--blue-800);
+  color: var(--white);
+  border: none;
+}
